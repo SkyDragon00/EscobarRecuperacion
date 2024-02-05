@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EscobarRecuperacion.EscobarViews.SearchPage"
+             Title="Search Dog Breeds">
+    <StackLayout>
+        <Entry x:Name="BreedEntry" Placeholder="Search for a breed"/>
+        <Button Text="Search" Clicked="OnSearchButtonClicked"/>
+        <Image Source="{Binding ImageUrl}"/>
+        <!-- Aquí está tu control de imagen -->
+        <ListView ItemsSource="{Binding Breeds}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Breed}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
